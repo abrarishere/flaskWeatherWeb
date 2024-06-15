@@ -1,0 +1,213 @@
+:root{
+  --light-weight: #f9f9f9;
+  --white: #fff;
+  --dim-gray: #d3d3d3;
+  --dark-gray: #667;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  width: 100%;
+  background: #f9f9f9;
+  color: var(--white);
+  font-family: Arial, sans-serif;
+}
+
+placeholder, .data p {
+  color: var(--dim-gray);
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container{
+  max-width: 1170px;
+  overflow: hidden;
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui{
+  width: 900px;
+  height: 450px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  border-radius: 10px;
+}
+
+
+.main{
+  padding: 20px; 
+  height: 100%;
+  background: lightblue;
+}
+
+.logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.content-show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 50px;
+  gap: 10px;
+}
+
+.degree{
+  font-size: 4.5rem;
+  font-weight: bold;
+}
+
+
+.name-tdate{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 40px;
+}
+
+.name-tdate h1{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.name-tdate p{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.env{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  flex-direction: column;
+}
+
+.data{
+  background: darkcyan;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+}
+
+.corner{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 20px;
+  background: var(--light-weight);
+}
+
+i{
+  color: var(--dark-gray);
+}
+
+.block{
+  margin: 10px 0;
+  border-bottom: 1px solid var(--dim-gray);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.block:last-child{
+  margin-bottom: 0;
+}
+
+.block input{
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--white);
+}
+
+.block input:focus{
+  outline: none;
+}
+
+input::placeholder{
+  color: var(--dim-gray);
+}
+
+
+
+.block .row h3{
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+    /* <div class="loading"> */
+    /*   <div class="loader"></div> */
+    /* </div> */
+
+.loading{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.loader{
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-40%, -40%);
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+/* We can specify that  columns should conevrt into rows by using media query */
+@media (max-width: 768px){
+  .ui{
+    width: 100%;
+    height: auto;
+    grid-template-columns: 100%;
+  }
+  .content-show{
+    margin-top: 0;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 0px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    height: 100vh;
+  }
+}

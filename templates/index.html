@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet", href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://kit.fontawesome.com/2473dfbb63.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="loading">
+      <div class="loader"></div>
+    </div>
+
+    <div class="container">
+      <div class="ui">
+        <div class="main">
+          <div class="logo"><strong>Weather</strong>
+          </div>
+          <div class="content-show">
+            <div class="degree">
+              <p id="celcius">26 &#176; </p>
+            </div>
+            <div class="name-tdate rows">
+              <h1 id="city">London</h1>
+              <p id='tdate'>10:36-Tuesday,22 Oct 19</p>
+            </div>
+            <div class="env">
+              <i class="fas fa-cloud"></i>
+              <p>Cloudy</p>
+            </div>
+          </div> 
+        </div>
+        <div class="data">
+          <div class="corner">
+            <i class='fa fa-search'></i>
+          </div>
+          <div class="content">
+            <div class="block">
+              <input type="text" id="search" placeholder="Another location">
+            </div>
+            <div class="block">
+              <div class="row"><h3>Popular Countries </h3></div>
+              <div class="row countries"> <p>Birmingham</p> </div>
+              <div class="row countries"> <p>Manchester</p> </div>
+              <div class="row countries"> <p>New York</p> </div>
+              <div class="row countries"> <p>Callifornia</p> </div>
+            </div>
+            <div class="block">
+              <div class="row"><h3>Weather Details</h3></div>
+              <div class="row">
+                <p >Wind</p>
+                <p id="wind">10km/h</p>
+              </div>
+              <div class="row">
+                <p>Humidity</p>
+                <p id="humidity">10%</p>
+              </div>
+              <div class="row">
+                <p>Cloudy</p>
+                <p id="cloudy" >10%</p>
+              </div>
+              <div class="row">
+                <p>Rain</p>
+                <p id="rain">0mm</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- <script src="https://cdn.jsdelivr.net/gh/c-kick/mobileConsole/hnl.mobileconsole.min.js"></script> -->
+<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script>eruda.init();</script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
