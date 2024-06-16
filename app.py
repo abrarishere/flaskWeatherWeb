@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 import requests
 from flask import Flask, jsonify, render_template, request
@@ -43,7 +45,17 @@ def getWeather(city):
     url = f'http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}'
     response = requests.get(url)
     weather = response.json()
+    print(weather)
     return weather
+
+@app.route('/location', methods=['GET'])
+def get_location():
+    try: 
+        ip_address = requests.get('https://httpbin.org/ip').json().get('origin')
+        city = requests.get(f'https://ipinfo.io/{ip_address}/json').json().get('city')
+        return city
+    except ConnectionError:
+        return 'error'
 
 if __name__ == '__main__':
     app.run(debug=True)

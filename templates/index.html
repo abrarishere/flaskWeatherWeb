@@ -11,6 +11,9 @@
     <div class="loading">
       <div class="loader"></div>
     </div>
+    <div class="error">
+      <p>Something wrong happened</p>
+    </div>
 
     <div class="container">
       <div class="ui">
@@ -26,8 +29,9 @@
               <p id='tdate'>10:36-Tuesday,22 Oct 19</p>
             </div>
             <div class="env">
-              <i class="fas fa-cloud"></i>
-              <p>Cloudy</p>
+              <img id="condition--icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqxYptjHMo9oXZgKB2va0fIlQomkA3WTEHA&usqp=CAU"></img>
+
+              <p class="condition">Condition</p>
             </div>
           </div> 
         </div>
@@ -40,8 +44,10 @@
               <input type="text" id="search" placeholder="Another location">
             </div>
             <div class="block">
-              <div class="row"><h3>Popular Countries </h3></div>
-              <div class="row countries"> <p>Birmingham</p> </div>
+              <div class="row"><h3>Popular Cities </h3></div>
+              <div class="row countries"> <p>
+                London
+              </p> </div>
               <div class="row countries"> <p>Manchester</p> </div>
               <div class="row countries"> <p>New York</p> </div>
               <div class="row countries"> <p>Callifornia</p> </div>
@@ -57,8 +63,8 @@
                 <p id="humidity">10%</p>
               </div>
               <div class="row">
-                <p>Cloudy</p>
-                <p id="cloudy" >10%</p>
+                <p>Condition</p>
+                <p class="condition" >Rainy</p>
               </div>
               <div class="row">
                 <p>Rain</p>
@@ -69,7 +75,7 @@
         </div>
       </div>
     </div>
-  <!-- <script src="https://cdn.jsdelivr.net/gh/c-kick/mobileConsole/hnl.mobileconsole.min.js"></script> -->
+
 <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 <script>eruda.init();</script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
